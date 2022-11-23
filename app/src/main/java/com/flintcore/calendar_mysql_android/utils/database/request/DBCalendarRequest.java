@@ -197,14 +197,14 @@ public class DBCalendarRequest extends DBRequest<Calendar, Long, LocalDate, Stri
     public Calendar getObject(Context context, Long id) {
         return this.getAllObjects(context).stream()
                 .filter(cld -> cld.getId() == id)
-                .findFirst().orElse(new Calendar());
+                .findFirst().orElseThrow(() -> new RuntimeException("Not valid location"));
     }
 
     @Override
     public Calendar getObject(Context context, Long id, @NonNull LocalDate localDate) {
         return this.getAllObjects(context, localDate).stream()
                 .filter(cld -> cld.getId() == id)
-                .findFirst().orElse(new Calendar());
+                .findFirst().orElseThrow(() -> new RuntimeException("Not valid location"));
     }
 
     @Override

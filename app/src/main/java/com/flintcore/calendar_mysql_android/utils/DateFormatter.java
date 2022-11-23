@@ -34,7 +34,7 @@ public class DateFormatter {
         this.dateDominicanFormat = DateTimeFormatter.ofPattern(DEFAULT_STRING_DOMINICAN_FORMAT);
     }
 
-    public static DateFormatter getFormatter() {
+    public static synchronized DateFormatter getFormatter() {
         if (Objects.isNull(formatter)) {
             formatter = new DateFormatter();
         }
@@ -47,16 +47,16 @@ public class DateFormatter {
         return LocalDate.of(year, of, day);
     }
 
-    public String getStringLocalDateDominican(int year, int month, int day) {
+    public synchronized String getStringLocalDateDominican(int year, int month, int day) {
         Month of = Month.values()[month];
         return LocalDate.of(year, of, day).format(this.dateDominicanFormat);
     }
 
-    public String getStringLocalDateDominican(LocalDate localDate) {
+    public synchronized String getStringLocalDateDominican(LocalDate localDate) {
         return localDate.format(this.dateDominicanFormat);
     }
 
-    public LocalDate getLocalDateDominican(String stringLocalDate) {
+    public synchronized LocalDate getLocalDateDominican(String stringLocalDate) {
         return LocalDate.parse(stringLocalDate, this.dateDominicanFormat);
     }
 

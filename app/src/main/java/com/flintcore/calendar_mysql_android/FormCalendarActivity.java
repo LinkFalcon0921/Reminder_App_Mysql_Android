@@ -58,12 +58,16 @@ public class FormCalendarActivity extends AppCompatActivity {
             return;
         }
 
-        Calendar calendarSelected = this.calendarRequester.getObject(this,
-                getIntent().getExtras().getLong(key));
+        try {
+            Calendar calendarSelected = this.calendarRequester.getObject(this,
+                    getIntent().getExtras().getLong(key));
 
-        this.viewDataBinding.subjectTxt.setText(calendarSelected.getSubject());
-        String localDateExpected = dateFormatter.getStringLocalDateDominican(calendarSelected.getDateExpected());
-        this.viewDataBinding.datePickerTv.setText(localDateExpected);
+            this.viewDataBinding.subjectTxt.setText(calendarSelected.getSubject());
+            String localDateExpected = dateFormatter.getStringLocalDateDominican(calendarSelected.getDateExpected());
+            this.viewDataBinding.datePickerTv.setText(localDateExpected);
+        } catch (RuntimeException e) {
+            this.finish();
+        }
 
     }
 
@@ -150,7 +154,7 @@ public class FormCalendarActivity extends AppCompatActivity {
                 Calendar calendar = new Calendar();
 
                 calendar.setSubject(trimInfoSubject);
-                calendar.setDateExpected(LocalDate.parse(trimInfoDate));
+                calendar.setDateExpected(this.dateFormatter.getLocalDateDominican(trimInfoDate));
 
                 calendarRequester.addObject(this, calendar);
             };
