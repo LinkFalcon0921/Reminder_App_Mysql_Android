@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <include layout="@layout/fragment_toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/reminders_main_actions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!--Functions buttons here-->
+
+            <Button
+                android:id="@+id/btn_all_see_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/teal_700"
+                android:text="@string/see_reminders"
+                android:textSize="@dimen/title_high_size" />
+
+            <Button
+                android:id="@+id/btn_add_reminder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/teal_700"
+                android:text="@string/add_reminder_txt"
+                android:textSize="@dimen/title_high_size" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

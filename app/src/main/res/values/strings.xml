@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">My Reminders</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_reminder_txt">Agregar recordatorio</string>
+    <string name="edit_reminder_txt">Editar recordatorio</string>
+    <string name="see_reminders">Ver todos los recordatorios</string>
+    <string name="no_reminders_txt">Sin recordatorios</string>
+    <string name="reminders_txt">Recordatorios</string>
+    <string name="subject_title">Asunto</string>
+    <string name="subject_hint_txt">Ingrese un texto</string>
+    <string name="date_title">Fecha</string>
+    <string name="edit_txt">Editar</string>
+    <string name="save_txt">Guardar</string>
+    <string name="error_send_reminder_msg">Hubo un error al enviar los datos.</string>
+    <string name="reminder_added_msg">Calendario agregado.</string>
+    <string name="fail_request_code_reminder">No fue posible guardar el recordatorio.</string>
+    <string name="cancel_txt">Cancelar</string>
+    <string name="delete_txt">Eliminar</string>
+    <string name="invalid_date_msg">Ingrese una fecha valida</string>
+    <string name="invalid_subject_msg">Ingrese un asunto valido</string>
+    <string name="reminder_edited_msg">Recordatorio editado</string>
+    <string name="yes_option_alert_txt">Si</string>
+    <string name="no_option_alert_txt">No</string>
+    <string name="validate_delete_calendar_msg">\"Esta seguro que desea eliminar: \"</string>
+    <string name="deleted_calendar_msg">Recordatorio eliminado correctamente.</string>
+    <string name="no_deleted_calendar_msg">El recordatorio no fue eliminado.</string>
+    <string name="add_date_calendar_msg">Agregue una fecha al recordatorio</string>
+</resources>
